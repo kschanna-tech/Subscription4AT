@@ -1,6 +1,6 @@
-import React from 'react'; // ✅ this line is necessary
+import React from 'react'; // ✅ REQUIRED
+import './App.css'; // optional
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
 import Dashboard from './components/Dashboard';
 import Pricing from './components/Pricing';
 import Home from './components/Home';
@@ -8,7 +8,6 @@ import Home from './components/Home';
 function App() {
   return (
     <Router>
-      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />

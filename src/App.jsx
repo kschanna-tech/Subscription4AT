@@ -1,8 +1,21 @@
+import React from 'react'; // ✅ this line is necessary
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Dashboard from './components/Dashboard';
+import Pricing from './components/Pricing';
+import Home from './components/Home';
+
 function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 to-indigo-800 text-white">
-      <h1 className="text-4xl font-bold">Welcome to Subscription4AT</h1>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/pricing" element={<Pricing />} />
+      </Routes>
+    </Router>
   );
 }
+
 export default App;
